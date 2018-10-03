@@ -10,7 +10,6 @@ use App\Entity\Tracker;
 use Doctrine\ORM\EntityManager;
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
-
 use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -60,6 +59,26 @@ class TrackerController extends  FOSRestController
         // fetching all data from database
         $qb = $em->getRepository('App:Tracker')->findAll();
 
+        //making pagination using knp_paginator and load 5 items for single pagintion
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate($qb, $request->get('page', 1), 5);
+
+        return new View($pagination,Response::HTTP_ACCEPTED);
+
+    }
+    /**
+     * Fetching all trackers relative to a user
+     * @Rest\Get("/trackers/{userId}")
+     * @return View
+     */
+    public  function  getAllTrackersByUserIdAction(Request $request,$userId):View{
+
+        /** @var EntityManager $em */
+        $em = $this->getDoctrine()->getManager();
+        // getting the user object by the id
+        $user = $em->getRepository('App:User')->find($userId);
+        // fetching all data from database relative to the user
+        $qb = $em->getRepository('App:Tracker')->findBy(array("user"=>$user));
         //making pagination using knp_paginator and load 5 items for single pagintion
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate($qb, $request->get('page', 1), 5);
