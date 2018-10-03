@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\Traker;
+use App\Entity\Tracker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Traker|null find($id, $lockMode = null, $lockVersion = null)
- * @method Traker|null findOneBy(array $criteria, array $orderBy = null)
- * @method Traker[]    findAll()
- * @method Traker[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tracker|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tracker|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tracker[]    findAll()
+ * @method Tracker[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class TrakerRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Traker::class);
+        parent::__construct($registry, Tracker::class);
     }
 
 //    /**

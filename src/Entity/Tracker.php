@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrakerRepository")
  */
-class Timer
+class Tracker
 {
     /**
      * @ORM\Id()
@@ -17,7 +17,7 @@ class Timer
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="time")
      */
     private $time;
 
