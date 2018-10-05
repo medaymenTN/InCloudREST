@@ -8,6 +8,7 @@
         "friendsofsymfony/rest-bundle": "^2.4",
         "jms/serializer-bundle": "^2.4",
         "knplabs/knp-paginator-bundle": "^2.8",
+        "nelmio/cors-bundle": "^1.5",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "*",
         "symfony/console": "*",
