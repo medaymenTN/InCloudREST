@@ -24,7 +24,7 @@ class UserController extends FOSRestController
         $em = $this->getDoctrine()->getManager();
         $response = null ;
         //check if the username already exist
-        $user = $em->getRepository('App:User')->findBy(array("username"=>$request->get('username')));
+        $user = $em->getRepository('App:User')->findOneBy(array("username"=>$request->get('username')));
         if($user){
             $response = new View($user,Response::HTTP_ACCEPTED);
         }else {
