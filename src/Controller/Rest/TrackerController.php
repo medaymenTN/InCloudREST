@@ -28,7 +28,7 @@ class TrackerController extends  FOSRestController
         $em = $this->getDoctrine()->getManager();
         // get All values from Http request Body using keys
 
-        //convert string time to suitable time format equivalent to Doctrine TimeType
+        //convert string time to suitable time format equivalent to Doctrine DateTime
         $time = \DateTime::createFromFormat('Y-m-d H:i:s', $request->get('time'));
         $description = $request->get("description");
         // fetching user object from database using user primary key (Id())
