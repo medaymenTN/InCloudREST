@@ -24,6 +24,12 @@ $ php bin/console make:migration
 * if everything is ok generate your database schema using this command
 ``` 
 $ php bin/console doctrine:migrations:migrate
+
+```
+* load data fixtures using the following command 
+``` 
+$ php bin/console doctrine:fixtures:load
+
 ```
 * finally run your project using 
  ``` 
