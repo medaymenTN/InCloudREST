@@ -29,12 +29,12 @@ class TimeFixtures extends Fixture
         // calling php library faker to generate random fake data
         $faker = Faker\Factory::create();
 
-        // create 2 users and
+        // create a user instance 
         $user = new User();
         $user->setUsername($faker->name);
 
 
-        //persist the objects in the database
+        //persist the user in the database
 
         $manager->persist($user);
         $manager->flush();
