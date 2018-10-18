@@ -15,6 +15,11 @@ this will download all the required depenedencies to your symfony 4 project
 ```
  DATABASE_URL=mysql://dbuser:dbpassword@127.0.0.1:3306/inclouddb
 ``` 
+* create your database using the following command 
+```
+$ php bin/console doctrine:database:create
+```
+
 * using the command line add the migrations relative to your entities created using this command 
  
 ```
